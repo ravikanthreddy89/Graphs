@@ -16,7 +16,8 @@ public class DFSTest {
 		
 		DepthFirstSearch dfs= new DepthFirstSearch(g, 1);
 		
-		DFSIterative dfs_i = new DFSIterative(g, 1);
+		//DFSIterative dfs_i = new DFSIterative(g, 1);
+		MyDFS dfs_i = new MyDFS(g, 1);
 		
 		System.out.println("Path between 1 and 4 :"+ dfs.hasPathTo(4));
 		System.out.println("Path between 1 and 2 :"+ dfs.hasPathTo(2));
@@ -34,10 +35,10 @@ public class DFSTest {
 		System.out.println("Path between 1 and 0 :"+ dfs_i.hasPathTo(0));
 		
 		System.out.println("Path between node 1 and node 4 ");
-		for(int v : dfs_i.path(4)){
+		/*for(int v : dfs_i.path(4)){
 	    	if(v==1) System.out.print(v);
 	    	else System.out.print(v+"-");
-	    }
+	    }*/
 	    
 	}
 }
