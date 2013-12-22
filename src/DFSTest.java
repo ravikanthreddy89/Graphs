@@ -18,6 +18,11 @@ public class DFSTest {
 		
 		//DFSIterative dfs_i = new DFSIterative(g, 1);
 		MyDFS dfs_i = new MyDFS(g, 1);
+		ConnectedComponents cc= new ConnectedComponents(g);
+		
+		System.out.println("The component id of 1 is "+ cc.comp(1));
+		System.out.println("The component id of 1 is "+ cc.comp(6));
+		System.out.println("The component id of 1 is "+ cc.comp(7));
 		
 		System.out.println("Path between 1 and 4 :"+ dfs.hasPathTo(4));
 		System.out.println("Path between 1 and 2 :"+ dfs.hasPathTo(2));
