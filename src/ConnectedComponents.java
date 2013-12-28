@@ -16,7 +16,6 @@ public class ConnectedComponents {
 				dfs(g, i);
 				components=components+1;
 			}
-			
 		}
 	}
 	

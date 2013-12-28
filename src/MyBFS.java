@@ -14,7 +14,33 @@ public class MyBFS {
 		bfs(g, source);		
 	}
 	
+	MyBFS(Digraph g, int s){
+		visited=new boolean[g.V()];
+		parent= new int[g.V()];
+		source=s;
+		bfs(g, source);		
+	}
+	
+	
 	public void bfs(Graph g, int s){
+		LinkedList<Integer> q= new LinkedList<Integer>();
+		q.addLast(s);
+		
+		while(!q.isEmpty()){
+			//int node=q.getFirst();
+			int node=q.removeFirst();
+			for(int nbrs : g.adj(node)){
+				if(visited[nbrs]==false){
+					q.addLast(nbrs);
+					parent[nbrs]=node;
+				}
+			}
+			visited[node]=true;
+		}
+	}
+	
+	
+	public void bfs(Digraph g, int s){
 		LinkedList<Integer> q= new LinkedList<Integer>();
 		q.addLast(s);
 		
