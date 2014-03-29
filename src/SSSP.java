@@ -39,9 +39,13 @@ public class SSSP {
 		while(!minPQ.isEmpty()){
 			double wt=minPQ.firstKey();
 			int w=minPQ.get(wt);
+			System.out.println("relaxing edges from "+w);
 			for(DirectedEdge ed : edg.adj(w)){
+				System.out.println("break");
 				int dest=ed.dest();
+				//System.out.println("Destination "+dest);
 				if(dist[dest]> dist[w]+ed.weight()){
+					System.out.println("Updating distance of "+dest);
 					dist[dest]=dist[w]+ed.weight();
 					parent[dest]=w;
 					minPQ.put(dist[dest], dest);

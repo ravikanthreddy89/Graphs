@@ -14,12 +14,13 @@ public class EdgeWeightedDigraph {
 	public void addEdge(int u, int v, double weight) throws RuntimeException{
 		if(weight<=0) throw new RuntimeException("Negative and zero weights are not accepted");
 		DirectedEdge e= new DirectedEdge(u,v,weight);
+		adj[u].add(e);
 		this.E=this.E+1;
 	}
 	
 	/*return out edges*/
 	public Iterable<DirectedEdge> adj(int u){
-		return (Iterable<DirectedEdge>)this.adj(u);
+		return (Iterable<DirectedEdge>)this.adj[u];
 	}
 	
 	public int V(){
